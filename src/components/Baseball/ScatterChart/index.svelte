@@ -17,7 +17,7 @@
     let value;
 	let circles;
 
-    let innings = [300,300,300,300, 300, 300, 500, 700]
+    let innings = [300,300,300,300, 300, 300, 300, 500, 700]
 
 	const preloadFont = [
 		"https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2",
