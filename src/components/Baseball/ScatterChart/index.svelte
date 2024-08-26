@@ -16,6 +16,7 @@
     
     let value;
 	let circles;
+	
 
     let innings = [300,300,300,300, 300, 300, 300, 500, 700]
 
@@ -68,43 +69,66 @@
 		return newData;
 	}
 
-	function handleTransition(){
+	
+
+	function handleTransition(pitcher,value){
+
+		console.log(value)
+
+		if(value===0 || !value){
+
+			let x = Math.round(margin.left+10*(pitcher["ratioCount"]));
+			let y = Math.round(yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))));
+			return `${x}px,${y}px,0`;
+		}
 		if(value===1){
-			let circles = selectAll("circle");
-			circles.transition()
-			.duration(250)
-			.attr('cx', function(d, i) {
-				let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-				return margin.left+10*pitcher["ratioCount"];
-			})
-			.attr('cy',function(d,i){
-				let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-				return yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"])))
-			});
+
+			let x = Math.round(margin.left+10*(pitcher["ratioCount"]));
+			let y = Math.round(yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))));
+			return `${x}px,${y}px,0`;
+
+
+			// let circles = selectAll("circle");
+			// circles.transition()
+			// .duration(250)
+			// .attr('cx', function(d, i) {
+			// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
+			// 	return margin.left+10*pitcher["ratioCount"];
+			// })
+			// .attr('cy',function(d,i){
+			// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
+			// 	return 
+			// });
 		}
 		if(value===2){
-			let circles = selectAll("circle");
-			circles.transition()
-			.duration(1000)
-			.attr('cx', function(d, i) {
-				return xScale(pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))["pLI"]);
-			})
-			.attr('cy',function(d,i){
-				let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-				return yScale(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))
-			});
+
+			let x = Math.round(margin.left+10*(pitcher["pLI"]));
+			let y = Math.round(yScale(100*(Number(pitcher["SD"]))/Number(pitcher["G"])));
+
+			return `${x}px,${y}px,0`;
+
+			// let circles = selectAll("circle");
+			// circles.transition()
+			// .duration(1000)
+			// .attr('cx', function(d, i) {
+			// 	return xScale(pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))["pLI"]);
+			// })
+			// .attr('cy',function(d,i){
+			// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
+			// 	return yScale(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))
+			// });
 		}
 		if(value===scrollySteps.length-3){
-			let circles = selectAll("circle");
-			yScale = scaleLinear()
-				.domain([7,0])
-				.range([margin.bottom,chartHeight-margin.top])
-			circles.transition()
-			.duration(1000)
-			.attr('cy',function(d,i){
-				let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-				return yScale((Number(pitcher["SD"]))/Number(pitcher["MD"]))
-			});
+			// let circles = selectAll("circle");
+			// yScale = scaleLinear()
+			// 	.domain([7,0])
+			// 	.range([margin.bottom,chartHeight-margin.top])
+			// circles.transition()
+			// .duration(1000)
+			// .attr('cy',function(d,i){
+			// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
+			// 	return yScale((Number(pitcher["SD"]))/Number(pitcher["MD"]))
+			// });
 			
 		}
 	}
@@ -114,16 +138,20 @@
 		// console.log("hello");
 		// buildChart(pitchers,body);
 	})
+
+
+	$: console.log(value)
 	
     $: pitchersCleaned = pitchers.filter((d)=>d['MD']!==0).filter((d)=>d['IP']>300)
 	$: pitchersFinal = assignRatioPosition(pitchersCleaned);
-	$: value, handleTransition()
+	// $: value, handleTransition()
 	// $: yTicks = getTicks("y",xScale)
 
 </script>
 
 
 <div id="dataviz">
+	{#if pitchersFinal}
 	<svg class ="chart-svg"
 		width={chartWidth+margin.left+margin.right}
 		height={chartHeight+margin.top+margin.bottom}
@@ -131,14 +159,16 @@
         <Axis {xScale} {yScale} {margin} {chartWidth} {chartHeight} step={value} {innings}/>
 		<g transform="translate({margin.left},{margin.top})">
 			<g class="circles-container">
-                    {#each pitchersFinal as pitcher}
+                    {#each pitchersFinal as pitcher, i (pitcher.PlayerId)}
 						<circle
-							cx={margin.left+10*(pitcher["ratioCount"])}
-							cy={yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"])))}
 							r={5}
 							data-label={pitcher['PlayerId']}
 							fill="blue"
-							style="opacity:{pitcher["IP"] > (innings[value] ?? 300) ? 1 : 0}"
+
+							style="
+								--delay: {i};
+								transform:translate3d({handleTransition(pitcher,value)});
+							"
 						>
 						</circle>
                     {/each}
@@ -166,6 +196,7 @@
 			></line> -->
 		</g>
 	</svg>
+	{/if}
     <div class="spacer" />
     <Scrolly bind:value>
 		{#each range(0,scrollySteps.length,1) as step, i}
@@ -201,8 +232,10 @@
 		top: 4em;
     }
 
-	circle{
-		mix-blend-mode: multiply;
+	circle {
+		transition: transform 0.5s calc(var(--delay) * 0.0005s);
+
+		/* mix-blend-mode: multiply; */
 	}
 
 	/* .transition-to-dot{
