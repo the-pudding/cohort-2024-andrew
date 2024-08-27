@@ -69,54 +69,34 @@
 		return newData;
 	}
 
-	
+	function handleColor(pitcher,value){
+		console.log("handle");
+		if ((100*Number(pitcher['SD']/pitcher['G']))>=20 && (100*Number(pitcher['SD']/pitcher['G']))<=40 && value === 1){
+			return "red";
+		}
+		return "blue";
+	}
 
 	function handleTransition(pitcher,value){
 
-		console.log(value)
-
-		if(value===0 || !value){
+		if(value===0 || !value || value===1 || value===2){
 
 			let x = Math.round(margin.left+10*(pitcher["ratioCount"]));
 			let y = Math.round(yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))));
 			return `${x}px,${y}px,0`;
 		}
-		if(value===1){
+		if(value===1 || value===2){
 
 			let x = Math.round(margin.left+10*(pitcher["ratioCount"]));
 			let y = Math.round(yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))));
 			return `${x}px,${y}px,0`;
-
-
-			// let circles = selectAll("circle");
-			// circles.transition()
-			// .duration(250)
-			// .attr('cx', function(d, i) {
-			// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-			// 	return margin.left+10*pitcher["ratioCount"];
-			// })
-			// .attr('cy',function(d,i){
-			// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-			// 	return 
-			// });
 		}
-		if(value===2){
+		if(value>2){
 
-			let x = Math.round(margin.left+10*(pitcher["pLI"]));
+			let x = xScale(Number(pitcher["pLI"]));
 			let y = Math.round(yScale(100*(Number(pitcher["SD"]))/Number(pitcher["G"])));
 
 			return `${x}px,${y}px,0`;
-
-			// let circles = selectAll("circle");
-			// circles.transition()
-			// .duration(1000)
-			// .attr('cx', function(d, i) {
-			// 	return xScale(pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))["pLI"]);
-			// })
-			// .attr('cy',function(d,i){
-			// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-			// 	return yScale(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))
-			// });
 		}
 		if(value===scrollySteps.length-3){
 			// let circles = selectAll("circle");
@@ -138,9 +118,6 @@
 		// console.log("hello");
 		// buildChart(pitchers,body);
 	})
-
-
-	$: console.log(value)
 	
     $: pitchersCleaned = pitchers.filter((d)=>d['MD']!==0).filter((d)=>d['IP']>300)
 	$: pitchersFinal = assignRatioPosition(pitchersCleaned);
@@ -152,63 +129,51 @@
 
 <div id="dataviz">
 	{#if pitchersFinal}
-	<svg class ="chart-svg"
-		width={chartWidth+margin.left+margin.right}
-		height={chartHeight+margin.top+margin.bottom}
-	>
-        <Axis {xScale} {yScale} {margin} {chartWidth} {chartHeight} step={value} {innings}/>
-		<g transform="translate({margin.left},{margin.top})">
-			<g class="circles-container">
-                    {#each pitchersFinal as pitcher, i (pitcher.PlayerId)}
-						<circle
-							r={5}
-							data-label={pitcher['PlayerId']}
-							fill="blue"
-
-							style="
-								--delay: {i};
-								transform:translate3d({handleTransition(pitcher,value)});
-							"
-						>
-						</circle>
-                    {/each}
-				</g>
-			<line
-				x1={xScale(0)}
-				x2={chartWidth}
-				y1={yScale(20)}
-				y2={yScale(20)}
-				stroke="red"
-			></line>
-			<line
-				x1={xScale(0)}
-				x2={chartWidth}
-				y1={yScale(40)}
-				y2={yScale(40)}
-				stroke="red"
-			></line>
-			<!-- <line
-				x1={xScale(1)}
-				x2={xScale(1)}
-				y1={margin.top}
-				y2={yScale(0)}
-				stroke="red"
-			></line> -->
-		</g>
-	</svg>
+		<svg class ="chart-svg"
+			width={chartWidth+margin.left+margin.right}
+			height={chartHeight+margin.top+margin.bottom}
+		>
+			<Axis {xScale} {yScale} {margin} {chartWidth} {chartHeight} step={value} {innings}/>
+			<g transform="translate({margin.left},{margin.top})">
+				<g class="circles-container">
+						{#each pitchersFinal as pitcher, i (pitcher.PlayerId)}
+							<circle
+								r={5}
+								data-label={pitcher['PlayerId']}
+								fill={handleColor(pitcher,value)}
+								style="
+									--delay: {i};
+									transform:translate3d({handleTransition(pitcher,value)});
+								"
+							>
+							</circle>
+						{/each}
+					</g>
+			</g>
+		</svg>
 	{/if}
     <div class="spacer" />
-    <Scrolly bind:value>
-		{#each range(0,scrollySteps.length,1) as step, i}
-			{@const active = value === i}
-			<div class="step" class:active>
-				<p>{scrollySteps[i]}</p>
-			</div>
-		{/each}
-	</Scrolly>
+	<div class="scrolly-text-container">
+		<Scrolly bind:value>
+			{#each range(0,scrollySteps.length,1) as step, i}
+				{@const active = value === i}
+				<div class="step" class:active>
+					<p>{scrollySteps[i]}</p>
+				</div>
+			{/each}
+		</Scrolly>
+	</div>
 </div>
-
 <style>
+	#dataviz{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.scrolly-text-container{
+		position: relative;
+		z-index: 5;
+	}
     .step {
 		height: 80vh;
 		background: none;
@@ -220,7 +185,7 @@
         margin-left:auto;
         margin-right:auto;
 		padding: 1rem;
-        background-color:#ddd;
+        background-color:#333;
 		opacity: 1 !important;
 	}
 
@@ -233,7 +198,7 @@
     }
 
 	circle {
-		transition: transform 0.5s calc(var(--delay) * 0.0005s);
+		transition: transform 0.5s calc(var(--delay) * 0.0005s), fill 0.5s;
 
 		/* mix-blend-mode: multiply; */
 	}

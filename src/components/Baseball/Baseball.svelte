@@ -7,6 +7,7 @@
     export let copy;
 </script>
 
+<div class="article">
 {#each Object.keys(copy) as section, idx}
     <div class="section-{section}">
         {#each copy[section] as block, index}
@@ -32,6 +33,7 @@
         {/each}
     </div>
 {/each}
+</div>
 
 
 <style>
@@ -40,5 +42,11 @@
 		margin-left:auto;
 		margin-right:auto;
 	}
+    .article{
+        background-color: #333;
+    }
+    .article > * {
+        color: #eee;
+    }
 </style>
 

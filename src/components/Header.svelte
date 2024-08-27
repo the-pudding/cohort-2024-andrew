@@ -30,4 +30,10 @@
 	:global(.wordmark svg path) {
 		fill: currentColor;
 	}
+
+	header{
+
+		background-color: #333;
+	}
+
 </style>

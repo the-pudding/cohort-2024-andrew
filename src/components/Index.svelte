@@ -11,7 +11,7 @@
 	const data = getContext("data");
 </script>
 
-<WIP />
+<!-- <WIP /> -->
 
 <Baseball copy={copy}/>
 
@@ -24,6 +24,6 @@
 		margin-right:auto;
 		margin-top:15px;
 		margin-bottom:15px;
-	}
+	}	
 </style>
 

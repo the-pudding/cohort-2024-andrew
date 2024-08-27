@@ -1,5 +1,6 @@
 [
   {
+    "PlayerId": 142,
     "Name": "Josh Hader",
     "IP": 444,
     "SV": 192,
@@ -8,9 +9,16 @@
     "SD%": 54.455446,
     "MD%": 13.118812,
     "pLI": 1.79131,
-    "SD%-MD%": 41.336634
+    "SD%-MD%": 41.336634,
+    "career_start": 2017,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 7,
+    "middle_ten": -3,
+    "first_ten": -13
   },
   {
+    "PlayerId": 236,
     "Name": "Mariano Rivera",
     "IP": 1233.2,
     "SV": 652,
@@ -19,9 +27,16 @@
     "SD%": 52.488688,
     "MD%": 10.950226,
     "pLI": 1.903554,
-    "SD%-MD%": 41.538462
+    "SD%-MD%": 41.538462,
+    "career_start": 1995,
+    "career_end": 2013,
+    "in_mlb": "",
+    "last_ten": 0,
+    "middle_ten": 10,
+    "first_ten": 9
   },
   {
+    "PlayerId": 929,
     "Name": "Trevor Hoffman",
     "IP": 999.1,
     "SV": 596,
@@ -30,9 +45,16 @@
     "SD%": 52.119959,
     "MD%": 13.02999,
     "pLI": 1.961842,
-    "SD%-MD%": 39.089969
+    "SD%-MD%": 39.089969,
+    "career_start": 1993,
+    "career_end": 2010,
+    "in_mlb": "",
+    "last_ten": -3,
+    "middle_ten": 7,
+    "first_ten": 10
   },
   {
+    "PlayerId": 589,
     "Name": "Troy Percival",
     "IP": 707.2,
     "SV": 358,
@@ -41,9 +63,16 @@
     "SD%": 51.139601,
     "MD%": 12.535613,
     "pLI": 1.90058,
-    "SD%-MD%": 38.603989
+    "SD%-MD%": 38.603989,
+    "career_start": 1995,
+    "career_end": 2009,
+    "in_mlb": "",
+    "last_ten": -4,
+    "middle_ten": 6,
+    "first_ten": 9
   },
   {
+    "PlayerId": 352,
     "Name": "Edwin Díaz",
     "IP": 434.1,
     "SV": 219,
@@ -52,9 +81,16 @@
     "SD%": 50.113895,
     "MD%": 15.261959,
     "pLI": 2.001118,
-    "SD%-MD%": 34.851936
+    "SD%-MD%": 34.851936,
+    "career_start": 2016,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 8,
+    "middle_ten": -2,
+    "first_ten": -12
   },
   {
+    "PlayerId": 947,
     "Name": "Jonathan Papelbon",
     "IP": 709.2,
     "SV": 368,
@@ -63,9 +99,16 @@
     "SD%": 49.41691,
     "MD%": 10.641399,
     "pLI": 1.826189,
-    "SD%-MD%": 38.77551
+    "SD%-MD%": 38.77551,
+    "career_start": 2005,
+    "career_end": 2016,
+    "in_mlb": "",
+    "last_ten": 3,
+    "middle_ten": 9,
+    "first_ten": -1
   },
   {
+    "PlayerId": 366,
     "Name": "Kenley Jansen",
     "IP": 857.2,
     "SV": 443,
@@ -74,9 +117,16 @@
     "SD%": 49.359721,
     "MD%": 10.826542,
     "pLI": 1.716856,
-    "SD%-MD%": 38.533178
+    "SD%-MD%": 38.533178,
+    "career_start": 2010,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 10,
+    "middle_ten": 4,
+    "first_ten": -6
   },
   {
+    "PlayerId": 1135,
     "Name": "Eric Gagne",
     "IP": 378.1,
     "SV": 187,
@@ -85,9 +135,16 @@
     "SD%": 48.305085,
     "MD%": 9.887006,
     "pLI": 1.713356,
-    "SD%-MD%": 38.418079
+    "SD%-MD%": 38.418079,
+    "career_start": 1999,
+    "career_end": 2008,
+    "in_mlb": "",
+    "last_ten": -5,
+    "middle_ten": 5,
+    "first_ten": 5
   },
   {
+    "PlayerId": 149,
     "Name": "Craig Kimbrel",
     "IP": 801.1,
     "SV": 440,
@@ -96,9 +153,16 @@
     "SD%": 48.188406,
     "MD%": 12.801932,
     "pLI": 1.812038,
-    "SD%-MD%": 35.386473
+    "SD%-MD%": 35.386473,
+    "career_start": 2010,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 10,
+    "middle_ten": 4,
+    "first_ten": -6
   },
   {
+    "PlayerId": 68,
     "Name": "Aroldis Chapman",
     "IP": 744,
     "SV": 325,
@@ -107,9 +171,16 @@
     "SD%": 47.496791,
     "MD%": 12.451861,
     "pLI": 1.749297,
-    "SD%-MD%": 35.044929
+    "SD%-MD%": 35.044929,
+    "career_start": 2010,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 10,
+    "middle_ten": 4,
+    "first_ten": -6
   },
   {
+    "PlayerId": 710,
     "Name": "Zack Britton",
     "IP": 391,
     "SV": 154,
@@ -118,9 +189,16 @@
     "SD%": 47.222222,
     "MD%": 9.59596,
     "pLI": 1.63464,
-    "SD%-MD%": 37.626263
+    "SD%-MD%": 37.626263,
+    "career_start": 2011,
+    "career_end": 2022,
+    "in_mlb": "",
+    "last_ten": 9,
+    "middle_ten": 3,
+    "first_ten": -7
   },
   {
+    "PlayerId": 627,
     "Name": "Robb Nen",
     "IP": 659,
     "SV": 314,
@@ -129,9 +207,16 @@
     "SD%": 47.011309,
     "MD%": 13.085622,
     "pLI": 1.936638,
-    "SD%-MD%": 33.925687
+    "SD%-MD%": 33.925687,
+    "career_start": 1993,
+    "career_end": 2002,
+    "in_mlb": "",
+    "last_ten": -11,
+    "middle_ten": -1,
+    "first_ten": 9
   },
   {
+    "PlayerId": 72,
     "Name": "Brian Wilson",
     "IP": 382,
     "SV": 172,
@@ -140,9 +225,16 @@
     "SD%": 46.700508,
     "MD%": 14.467005,
     "pLI": 1.958829,
-    "SD%-MD%": 32.233503
+    "SD%-MD%": 32.233503,
+    "career_start": 2006,
+    "career_end": 2014,
+    "in_mlb": "",
+    "last_ten": 1,
+    "middle_ten": 8,
+    "first_ten": -2
   },
   {
+    "PlayerId": 1084,
     "Name": "John Wetteland",
     "IP": 441.2,
     "SV": 249,
@@ -151,9 +243,16 @@
     "SD%": 46.445498,
     "MD%": 13.981043,
     "pLI": 2.032931,
-    "SD%-MD%": 32.464455
+    "SD%-MD%": 32.464455,
+    "career_start": 1989,
+    "career_end": 2000,
+    "in_mlb": "",
+    "last_ten": -13,
+    "middle_ten": -3,
+    "first_ten": 7
   },
   {
+    "PlayerId": 742,
     "Name": "Francisco Rodríguez",
     "IP": 976,
     "SV": 437,
@@ -162,9 +261,16 @@
     "SD%": 46.308017,
     "MD%": 12.236287,
     "pLI": 1.803618,
-    "SD%-MD%": 34.07173
+    "SD%-MD%": 34.07173,
+    "career_start": 2002,
+    "career_end": 2017,
+    "in_mlb": "",
+    "last_ten": 4,
+    "middle_ten": 10,
+    "first_ten": 2
   },
   {
+    "PlayerId": 1255,
     "Name": "Huston Street",
     "IP": 680,
     "SV": 324,
@@ -173,9 +279,16 @@
     "SD%": 46.257485,
     "MD%": 12.57485,
     "pLI": 1.756029,
-    "SD%-MD%": 33.682635
+    "SD%-MD%": 33.682635,
+    "career_start": 2005,
+    "career_end": 2017,
+    "in_mlb": "",
+    "last_ten": 4,
+    "middle_ten": 9,
+    "first_ten": -1
   },
   {
+    "PlayerId": 428,
     "Name": "Joe Nathan",
     "IP": 761,
     "SV": 377,
@@ -184,9 +297,16 @@
     "SD%": 46.174142,
     "MD%": 9.366755,
     "pLI": 1.712947,
-    "SD%-MD%": 36.807388
+    "SD%-MD%": 36.807388,
+    "career_start": 1999,
+    "career_end": 2016,
+    "in_mlb": "",
+    "last_ten": 3,
+    "middle_ten": 10,
+    "first_ten": 5
   },
   {
+    "PlayerId": 545,
     "Name": "Alex Colomé",
     "IP": 435.1,
     "SV": 159,
@@ -195,9 +315,16 @@
     "SD%": 45.939675,
     "MD%": 16.705336,
     "pLI": 1.798063,
-    "SD%-MD%": 29.234339
+    "SD%-MD%": 29.234339,
+    "career_start": 2013,
+    "career_end": "active",
+    "in_mlb": 2023,
+    "last_ten": 10,
+    "middle_ten": 1,
+    "first_ten": -9
   },
   {
+    "PlayerId": 24,
     "Name": "Roberto Osuna",
     "IP": 315,
     "SV": 155,
@@ -206,9 +333,16 @@
     "SD%": 45.859873,
     "MD%": 12.101911,
     "pLI": 1.800097,
-    "SD%-MD%": 33.757962
+    "SD%-MD%": 33.757962,
+    "career_start": 2015,
+    "career_end": "active",
+    "in_mlb": 2020,
+    "last_ten": 9,
+    "middle_ten": -1,
+    "first_ten": -11
   },
   {
+    "PlayerId": 181,
     "Name": "David Robertson",
     "IP": 857.2,
     "SV": 177,
@@ -217,9 +351,16 @@
     "SD%": 45.724466,
     "MD%": 13.776722,
     "pLI": 1.65083,
-    "SD%-MD%": 31.947743
+    "SD%-MD%": 31.947743,
+    "career_start": 2008,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 10,
+    "middle_ten": 6,
+    "first_ten": -4
   },
   {
+    "PlayerId": 145,
     "Name": "Tyler Rogers",
     "IP": 333,
     "SV": 19,
@@ -228,9 +369,16 @@
     "SD%": 45.37037,
     "MD%": 14.814815,
     "pLI": 1.516866,
-    "SD%-MD%": 30.555556
+    "SD%-MD%": 30.555556,
+    "career_start": 2019,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 5,
+    "middle_ten": -5,
+    "first_ten": -15
   },
   {
+    "PlayerId": 250,
     "Name": "Billy Wagner",
     "IP": 903,
     "SV": 422,
@@ -239,9 +387,16 @@
     "SD%": 45.369285,
     "MD%": 11.723329,
     "pLI": 1.805018,
-    "SD%-MD%": 33.645955
+    "SD%-MD%": 33.645955,
+    "career_start": 1995,
+    "career_end": 2010,
+    "in_mlb": "",
+    "last_ten": -3,
+    "middle_ten": 7,
+    "first_ten": 9
   },
   {
+    "PlayerId": 1090,
     "Name": "Jeff Shaw",
     "IP": 623.2,
     "SV": 202,
@@ -250,9 +405,16 @@
     "SD%": 44.859813,
     "MD%": 15.140187,
     "pLI": 1.561493,
-    "SD%-MD%": 29.719626
+    "SD%-MD%": 29.719626,
+    "career_start": 1990,
+    "career_end": 2001,
+    "in_mlb": "",
+    "last_ten": -12,
+    "middle_ten": -2,
+    "first_ten": 8
   },
   {
+    "PlayerId": 242,
     "Name": "Joakim Soria",
     "IP": 762,
     "SV": 229,
@@ -261,9 +423,16 @@
     "SD%": 44.818653,
     "MD%": 12.176166,
     "pLI": 1.657107,
-    "SD%-MD%": 32.642487
+    "SD%-MD%": 32.642487,
+    "career_start": 2007,
+    "career_end": 2021,
+    "in_mlb": "",
+    "last_ten": 8,
+    "middle_ten": 7,
+    "first_ten": -3
   },
   {
+    "PlayerId": 59,
     "Name": "Chad Green",
     "IP": 377.2,
     "SV": 24,
@@ -272,9 +441,16 @@
     "SD%": 44.147157,
     "MD%": 15.719064,
     "pLI": 1.234417,
-    "SD%-MD%": 28.428094
+    "SD%-MD%": 28.428094,
+    "career_start": 2016,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 8,
+    "middle_ten": -2,
+    "first_ten": -12
   },
   {
+    "PlayerId": 124,
     "Name": "Rafael Soriano",
     "IP": 594,
     "SV": 207,
@@ -283,9 +459,16 @@
     "SD%": 44.082333,
     "MD%": 11.663808,
     "pLI": 1.498154,
-    "SD%-MD%": 32.418525
+    "SD%-MD%": 32.418525,
+    "career_start": 2002,
+    "career_end": 2015,
+    "in_mlb": "",
+    "last_ten": 2,
+    "middle_ten": 10,
+    "first_ten": 2
   },
   {
+    "PlayerId": 583,
     "Name": "Mark Melancon",
     "IP": 726.2,
     "SV": 262,
@@ -294,9 +477,16 @@
     "SD%": 43.989071,
     "MD%": 11.47541,
     "pLI": 1.635968,
-    "SD%-MD%": 32.513661
+    "SD%-MD%": 32.513661,
+    "career_start": 2009,
+    "career_end": "active",
+    "in_mlb": 2022,
+    "last_ten": 10,
+    "middle_ten": 5,
+    "first_ten": -5
   },
   {
+    "PlayerId": 303,
     "Name": "Chad Cordero",
     "IP": 330.1,
     "SV": 128,
@@ -305,9 +495,16 @@
     "SD%": 43.949045,
     "MD%": 14.012739,
     "pLI": 1.778746,
-    "SD%-MD%": 29.936306
+    "SD%-MD%": 29.936306,
+    "career_start": 2003,
+    "career_end": 2010,
+    "in_mlb": "",
+    "last_ten": -3,
+    "middle_ten": 7,
+    "first_ten": 1
   },
   {
+    "PlayerId": 332,
     "Name": "Raisel Iglesias",
     "IP": 526.1,
     "SV": 216,
@@ -316,9 +513,16 @@
     "SD%": 43.469388,
     "MD%": 12.44898,
     "pLI": 1.634279,
-    "SD%-MD%": 31.020408
+    "SD%-MD%": 31.020408,
+    "career_start": 2015,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 9,
+    "middle_ten": -1,
+    "first_ten": -11
   },
   {
+    "PlayerId": 1273,
     "Name": "Brad Lidge",
     "IP": 600.1,
     "SV": 225,
@@ -327,9 +531,16 @@
     "SD%": 43.189369,
     "MD%": 14.950166,
     "pLI": 1.816833,
-    "SD%-MD%": 28.239203
+    "SD%-MD%": 28.239203,
+    "career_start": 2002,
+    "career_end": 2012,
+    "in_mlb": "",
+    "last_ten": -1,
+    "middle_ten": 9,
+    "first_ten": 2
   },
   {
+    "PlayerId": 204,
     "Name": "Greg Holland",
     "IP": 547.2,
     "SV": 220,
@@ -338,9 +549,16 @@
     "SD%": 42.985612,
     "MD%": 12.94964,
     "pLI": 1.645331,
-    "SD%-MD%": 30.035971
+    "SD%-MD%": 30.035971,
+    "career_start": 2010,
+    "career_end": 2022,
+    "in_mlb": "",
+    "last_ten": 9,
+    "middle_ten": 4,
+    "first_ten": -6
   },
   {
+    "PlayerId": 853,
     "Name": "Koji Uehara",
     "IP": 414,
     "SV": 95,
@@ -349,9 +567,16 @@
     "SD%": 42.924528,
     "MD%": 10.141509,
     "pLI": 1.308404,
-    "SD%-MD%": 32.783019
+    "SD%-MD%": 32.783019,
+    "career_start": 2009,
+    "career_end": 2017,
+    "in_mlb": "",
+    "last_ten": 4,
+    "middle_ten": 5,
+    "first_ten": -5
   },
   {
+    "PlayerId": 432,
     "Name": "Tom Gordon",
     "IP": 577.1,
     "SV": 155,
@@ -360,9 +585,16 @@
     "SD%": 42.908438,
     "MD%": 14.362657,
     "pLI": 1.685685,
-    "SD%-MD%": 28.545781
+    "SD%-MD%": 28.545781,
+    "career_start": 1988,
+    "career_end": 2009,
+    "in_mlb": "",
+    "last_ten": -4,
+    "middle_ten": 6,
+    "first_ten": 10
   },
   {
+    "PlayerId": 837,
     "Name": "Ugueth Urbina",
     "IP": 585.2,
     "SV": 237,
@@ -371,9 +603,16 @@
     "SD%": 42.704626,
     "MD%": 14.05694,
     "pLI": 1.732707,
-    "SD%-MD%": 28.647687
+    "SD%-MD%": 28.647687,
+    "career_start": 1995,
+    "career_end": 2005,
+    "in_mlb": "",
+    "last_ten": -8,
+    "middle_ten": 2,
+    "first_ten": 9
   },
   {
+    "PlayerId": 0,
     "Name": "Tony Watson",
     "IP": 648.1,
     "SV": 32,
@@ -382,9 +621,16 @@
     "SD%": 42.670537,
     "MD%": 12.33672,
     "pLI": 1.497534,
-    "SD%-MD%": 30.333817
+    "SD%-MD%": 30.333817,
+    "career_start": 2011,
+    "career_end": 2021,
+    "in_mlb": "",
+    "last_ten": 8,
+    "middle_ten": 3,
+    "first_ten": -7
   },
   {
+    "PlayerId": 47,
     "Name": "Dellin Betances",
     "IP": 392.1,
     "SV": 36,
@@ -393,9 +639,16 @@
     "SD%": 42.627346,
     "MD%": 13.941019,
     "pLI": 1.548756,
-    "SD%-MD%": 28.686327
+    "SD%-MD%": 28.686327,
+    "career_start": 2011,
+    "career_end": 2021,
+    "in_mlb": "",
+    "last_ten": 8,
+    "middle_ten": 3,
+    "first_ten": -7
   },
   {
+    "PlayerId": 426,
     "Name": "Armando Benitez",
     "IP": 779,
     "SV": 289,
@@ -404,9 +657,16 @@
     "SD%": 42.388451,
     "MD%": 15.091864,
     "pLI": 1.706489,
-    "SD%-MD%": 27.296588
+    "SD%-MD%": 27.296588,
+    "career_start": 1994,
+    "career_end": 2008,
+    "in_mlb": "",
+    "last_ten": -5,
+    "middle_ten": 5,
+    "first_ten": 10
   },
   {
+    "PlayerId": 158,
     "Name": "Felipe Vázquez",
     "IP": 330.2,
     "SV": 89,
@@ -415,9 +675,16 @@
     "SD%": 42.105263,
     "MD%": 11.145511,
     "pLI": 1.476685,
-    "SD%-MD%": 30.959752
+    "SD%-MD%": 30.959752,
+    "career_start": 2015,
+    "career_end": 2019,
+    "in_mlb": "",
+    "last_ten": 4,
+    "middle_ten": -1,
+    "first_ten": -11
   },
   {
+    "PlayerId": 559,
     "Name": "Fernando Rodney",
     "IP": 933,
     "SV": 327,
@@ -426,9 +693,16 @@
     "SD%": 42.060988,
     "MD%": 15.983176,
     "pLI": 1.741769,
-    "SD%-MD%": 26.077813
+    "SD%-MD%": 26.077813,
+    "career_start": 2002,
+    "career_end": 2019,
+    "in_mlb": "",
+    "last_ten": 6,
+    "middle_ten": 10,
+    "first_ten": 2
   },
   {
+    "PlayerId": 163,
     "Name": "Chris Perez",
     "IP": 379.1,
     "SV": 133,
@@ -437,9 +711,16 @@
     "SD%": 41.984733,
     "MD%": 13.231552,
     "pLI": 1.62454,
-    "SD%-MD%": 28.753181
+    "SD%-MD%": 28.753181,
+    "career_start": 2008,
+    "career_end": 2014,
+    "in_mlb": "",
+    "last_ten": 1,
+    "middle_ten": 6,
+    "first_ten": -4
   },
   {
+    "PlayerId": 945,
     "Name": "Bob Wickman",
     "IP": 866,
     "SV": 263,
@@ -448,9 +729,16 @@
     "SD%": 41.528662,
     "MD%": 16.178344,
     "pLI": 1.74943,
-    "SD%-MD%": 25.350318
+    "SD%-MD%": 25.350318,
+    "career_start": 1992,
+    "career_end": 2007,
+    "in_mlb": "",
+    "last_ten": -6,
+    "middle_ten": 4,
+    "first_ten": 10
   },
   {
+    "PlayerId": 497,
     "Name": "Addison Reed",
     "IP": 458.2,
     "SV": 125,
@@ -459,9 +747,16 @@
     "SD%": 41.505376,
     "MD%": 15.268817,
     "pLI": 1.630475,
-    "SD%-MD%": 26.236559
+    "SD%-MD%": 26.236559,
+    "career_start": 2011,
+    "career_end": 2018,
+    "in_mlb": "",
+    "last_ten": 5,
+    "middle_ten": 3,
+    "first_ten": -7
   },
   {
+    "PlayerId": 650,
     "Name": "Giovanny Gallegos",
     "IP": 335.2,
     "SV": 45,
@@ -470,9 +765,16 @@
     "SD%": 41.4791,
     "MD%": 15.11254,
     "pLI": 1.295571,
-    "SD%-MD%": 26.366559
+    "SD%-MD%": 26.366559,
+    "career_start": 2017,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 7,
+    "middle_ten": -3,
+    "first_ten": -13
   },
   {
+    "PlayerId": 9,
     "Name": "Mike Adams",
     "IP": 407.1,
     "SV": 4,
@@ -481,9 +783,16 @@
     "SD%": 41.421569,
     "MD%": 12.254902,
     "pLI": 1.320323,
-    "SD%-MD%": 29.166667
+    "SD%-MD%": 29.166667,
+    "career_start": 2004,
+    "career_end": 2014,
+    "in_mlb": "",
+    "last_ten": 1,
+    "middle_ten": 10,
+    "first_ten": 0
   },
   {
+    "PlayerId": 61,
     "Name": "Trevor Rosenthal",
     "IP": 364,
     "SV": 132,
@@ -492,9 +801,16 @@
     "SD%": 41.286863,
     "MD%": 15.817694,
     "pLI": 1.777723,
-    "SD%-MD%": 25.469169
+    "SD%-MD%": 25.469169,
+    "career_start": 2012,
+    "career_end": "active",
+    "in_mlb": 2020,
+    "last_ten": 10,
+    "middle_ten": 2,
+    "first_ten": -8
   },
   {
+    "PlayerId": 992,
     "Name": "Ken Giles",
     "IP": 355.1,
     "SV": 115,
@@ -503,9 +819,16 @@
     "SD%": 41.160221,
     "MD%": 9.668508,
     "pLI": 1.541357,
-    "SD%-MD%": 31.491713
+    "SD%-MD%": 31.491713,
+    "career_start": 2014,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 10,
+    "middle_ten": 0,
+    "first_ten": -10
   },
   {
+    "PlayerId": 144,
     "Name": "Héctor Neris",
     "IP": 585.1,
     "SV": 106,
@@ -514,9 +837,16 @@
     "SD%": 41.047297,
     "MD%": 14.864865,
     "pLI": 1.54513,
-    "SD%-MD%": 26.182432
+    "SD%-MD%": 26.182432,
+    "career_start": 2014,
+    "career_end": "active",
+    "in_mlb": "",
+    "last_ten": 10,
+    "middle_ten": 0,
+    "first_ten": -10
   },
   {
+    "PlayerId": 57,
     "Name": "Heath Bell",
     "IP": 628.2,
     "SV": 168,
@@ -525,9 +855,16 @@
     "SD%": 41.016949,
     "MD%": 13.728814,
     "pLI": 1.590727,
-    "SD%-MD%": 27.288136
+    "SD%-MD%": 27.288136,
+    "career_start": 2004,
+    "career_end": 2014,
+    "in_mlb": "",
+    "last_ten": 1,
+    "middle_ten": 10,
+    "first_ten": 0
   },
   {
+    "PlayerId": 883,
     "Name": "Jose Valverde",
     "IP": 630.1,
     "SV": 288,
@@ -536,9 +873,16 @@
     "SD%": 40.894569,
     "MD%": 11.341853,
     "pLI": 1.568732,
-    "SD%-MD%": 29.552716
+    "SD%-MD%": 29.552716,
+    "career_start": 2003,
+    "career_end": 2014,
+    "in_mlb": "",
+    "last_ten": 1,
+    "middle_ten": 10,
+    "first_ten": 1
   },
   {
+    "PlayerId": 359,
     "Name": "Sean Doolittle",
     "IP": 450.2,
     "SV": 112,
@@ -547,6 +891,12 @@
     "SD%": 40.820734,
     "MD%": 12.742981,
     "pLI": 1.471224,
-    "SD%-MD%": 28.077754
+    "SD%-MD%": 28.077754,
+    "career_start": 2012,
+    "career_end": 2022,
+    "in_mlb": "",
+    "last_ten": 9,
+    "middle_ten": 2,
+    "first_ten": -8
   }
 ]
