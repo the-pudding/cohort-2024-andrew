@@ -1,15 +1,23 @@
 <script>
     import { onMount } from "svelte";
     import { base } from "$app/paths";
+    import Scrolly from "$components/helpers/Scrolly.svelte";
 
     export let url;
     export let videoId;
     export let startSecond;
     export let endSecond;
 
+    let value;
+
+    $: console.log("hello",value)
+
     let videoContainer;
     let video;
+    let mounted;
     let observer;
+
+    let videoEl;
 
     let options = {
         root: video,
@@ -17,29 +25,39 @@
         threshold: 1.0,
     };
 
+    $: value == 0 ? playVideo() : '';
+
     function playVideo(){
+        if(mounted && videoEl) {
+            console.log(videoEl)
+        }
         console.log("video!");
         console.log(video);
-        video.play();
+        videoEl.play();
     }
 
     onMount(()=>{
-        video=videoContainer.querySelectorAll(`#${videoId}`)
+        mounted = true;
+        // video=videoContainer.querySelectorAll(`#${videoId}`)
         observer = new IntersectionObserver(playVideo, options);
     })
 
 </script>
 
+
+<Scrolly bind:value={value}>
+
 <div bind:this={videoContainer} class="video-container">
-    <video id={videoId}>
+    <video muted bind:this={videoEl} id={videoId}>
         <source src="{`${base}/assets/${url}`}" type="video/mp4">
         <track kind ="captions">
         Your browser does not support the video tag.
     </video>
 </div>
+</Scrolly>
 
 <style>
-    video{
+    video {
         display: block;
 		margin-left:auto;
 		margin-right:auto;
