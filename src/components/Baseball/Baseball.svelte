@@ -30,15 +30,8 @@
 {#each Object.keys(copy) as section, idx}
     <div class="section-{section}">
         {#each copy[section] as block, index}
-            {#if block.type === "list"}
-                <ul class ='text-blocks'>
-                    {#each block.value.items as item}
-                        <li>{item}</li>
-                    {/each}
-                </ul>
-            {/if}
             {#if block.type === "text"}
-                <p class="text-blocks">{block.value}</p>
+                <p class="text-blocks">{@html block.value}</p>
             {/if}
             {#if block.type === "video"}
                 <VideoContainer url={block.value.url} videoId={block.value.videoId} />

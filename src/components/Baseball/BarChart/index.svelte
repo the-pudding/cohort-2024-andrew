@@ -62,63 +62,30 @@
 		return "#eee";
 	}
 
-	// function handleTransition(pitcher,value){
-
-	// 	if(value===0 || !value || value===1 || value===2){
-
-	// 		let x = Math.round(margin.left+10*(pitcher["ratioCount"]));
-	// 		let y = Math.round(yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))));
-	// 		return `${x}px,${y}px,0`;
-	// 	}
-	// 	if(value>2){
-
-	// 		let x = xScale(Number(pitcher["pLI"]));
-	// 		let y = Math.round(yScale(100*(Number(pitcher["SD"]))/Number(pitcher["G"])));
-
-	// 		return `${x}px,${y}px,0`;
-	// 	}
-	// 	if(value===scrollySteps.length-3){
-	// 		// let circles = selectAll("circle");
-	// 		// yScale = scaleLinear()
-	// 		// 	.domain([7,0])
-	// 		// 	.range([margin.bottom,chartHeight-margin.top])
-	// 		// circles.transition()
-	// 		// .duration(1000)
-	// 		// .attr('cy',function(d,i){
-	// 		// 	let pitcher = pitchersFinal.find((e)=>Number(e['PlayerId'])===Number(this.getAttribute("data-label")))
-	// 		// 	return yScale((Number(pitcher["SD"]))/Number(pitcher["MD"]))
-	// 		// });
-			
-	// 	}
-	// }
-
-
 </script>
 
 
 <div id="bar-chart">
-	{#if leagueTrends}
-		<svg class ="chart-svg"
-			width={chartWidth+margin.left+margin.right}
-			height={chartHeight+margin.top+margin.bottom}
-		>
-			<Axis {xScale} {yScale} {margin} {chartWidth} {chartHeight}/>
-			<g transform="translate({margin.left},{margin.top})">
-				<g class="rect-container">
-						{#each leagueTrends as year, i}
-							<rect
-								x={xScale(year['Season'])}
-								y={yScale(year['SD'])}
-								height={yScale(0)-yScale(year['SD'])}
-								width={xScale.bandwidth()}
-								fill={handleColor(year['Season'],value)}
-							>
-							</rect>
-						{/each}
-					</g>
-			</g>
-		</svg>
-	{/if}
+	<svg class ="chart-svg"
+		width={chartWidth+margin.left+margin.right}
+		height={chartHeight+margin.top+margin.bottom}
+	>
+		<Axis {xScale} {yScale} {margin} {chartWidth} {chartHeight}/>
+		<g transform="translate({margin.left},{margin.top})">
+			<g class="rect-container">
+					{#each leagueTrends as year, i}
+						<rect
+							x={xScale(year['Season'])}
+							y={yScale(year['SD'])}
+							height={yScale(0)-yScale(year['SD'])}
+							width={xScale.bandwidth()}
+							fill={handleColor(year['Season'],value)}
+						>
+						</rect>
+					{/each}
+				</g>
+		</g>
+	</svg>
     <div class="spacer" />
 	<div class="scrolly-text-container">
 		<Scrolly bind:value>
@@ -161,12 +128,6 @@
 	.step-text{
 		background-color: #333;
 		padding: 1rem;
-	}
-
-	circle {
-		transition: transform 0.5s calc(var(--delay) * 0.0005s), fill 0.5s, opacity 0.5s;
-
-		/* mix-blend-mode: multiply; */
 	}
 
 	/* .transition-to-dot{
