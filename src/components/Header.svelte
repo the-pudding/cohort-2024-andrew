@@ -20,7 +20,7 @@
 	.wordmark a {
 		border: none;
 		display: block;
-		color: var(--color-fg);
+		color: #eee;
 	}
 
 	.wordmark a:hover {
@@ -29,11 +29,6 @@
 
 	:global(.wordmark svg path) {
 		fill: currentColor;
-	}
-
-	header{
-
-		background-color: #333;
 	}
 
 </style>

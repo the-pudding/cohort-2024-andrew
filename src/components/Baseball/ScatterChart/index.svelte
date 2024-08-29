@@ -70,22 +70,15 @@
 	}
 
 	function handleColor(pitcher,value){
-		console.log("handle");
-		if ((100*Number(pitcher['SD']/pitcher['G']))>=20 && (100*Number(pitcher['SD']/pitcher['G']))<=40 && value === 1){
-			return "red";
+		if ((Math.round(100*pitcher['SD']/pitcher['G']))>=20 && (Math.round(100*pitcher['SD']/pitcher['G']))<=40 && value === 1){
+			return "#598FBC";
 		}
-		return "blue";
+		return "#eee";
 	}
 
 	function handleTransition(pitcher,value){
 
 		if(value===0 || !value || value===1 || value===2){
-
-			let x = Math.round(margin.left+10*(pitcher["ratioCount"]));
-			let y = Math.round(yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))));
-			return `${x}px,${y}px,0`;
-		}
-		if(value===1 || value===2){
 
 			let x = Math.round(margin.left+10*(pitcher["ratioCount"]));
 			let y = Math.round(yScale(Math.round(100*(Number(pitcher["SD"]))/Number(pitcher["G"]))));
@@ -111,6 +104,15 @@
 			// });
 			
 		}
+	}
+
+	function handleOpacity(pitcher,value){
+		if (value > 4){
+			if(100*pitcher["SD"]/pitcher["G"]<40){
+				return 0;
+			}
+		}
+		return 1;
 	}
 
 	onMount(()=>{
@@ -145,6 +147,7 @@
 									--delay: {i};
 									transform:translate3d({handleTransition(pitcher,value)});
 								"
+								opacity={handleOpacity(pitcher,value)}
 							>
 							</circle>
 						{/each}
@@ -158,7 +161,7 @@
 			{#each range(0,scrollySteps.length,1) as step, i}
 				{@const active = value === i}
 				<div class="step" class:active>
-					<p>{scrollySteps[i]}</p>
+					<div class="step-text">{@html scrollySteps[i]}</div>
 				</div>
 			{/each}
 		</Scrolly>
@@ -178,15 +181,9 @@
 		height: 80vh;
 		background: none;
 		text-align: center;
-	}
-
-	.step p {
         width:30%;
         margin-left:auto;
         margin-right:auto;
-		padding: 1rem;
-        background-color:#333;
-		opacity: 1 !important;
 	}
 
     .chart-svg{
@@ -197,8 +194,13 @@
 		top: 4em;
     }
 
+	.step-text{
+		background-color: #333;
+		padding: 1rem;
+	}
+
 	circle {
-		transition: transform 0.5s calc(var(--delay) * 0.0005s), fill 0.5s;
+		transition: transform 0.5s calc(var(--delay) * 0.0005s), fill 0.5s, opacity 0.5s;
 
 		/* mix-blend-mode: multiply; */
 	}

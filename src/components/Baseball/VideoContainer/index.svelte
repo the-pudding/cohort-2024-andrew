@@ -1,7 +1,8 @@
 <script>
-    import { onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
     import { base } from "$app/paths";
     import Scrolly from "$components/helpers/Scrolly.svelte";
+    import { videoSound } from '../stores.js'
 
     export let url;
     export let videoId;
@@ -9,8 +10,6 @@
     export let endSecond;
 
     let value;
-
-    $: console.log("hello",value)
 
     let videoContainer;
     let video;
@@ -25,14 +24,17 @@
         threshold: 1.0,
     };
 
+    let muteOption=true;
+
+    const unsubscribe = videoSound.subscribe((value)=>(muteOption=value));
+    onDestroy(unsubscribe);
+
     $: value == 0 ? playVideo() : '';
 
     function playVideo(){
         if(mounted && videoEl) {
             console.log(videoEl)
         }
-        console.log("video!");
-        console.log(video);
         videoEl.play();
     }
 
@@ -48,7 +50,7 @@
 <Scrolly bind:value={value}>
 
 <div bind:this={videoContainer} class="video-container">
-    <video muted bind:this={videoEl} id={videoId}>
+    <video muted={muteOption} bind:this={videoEl} id={videoId}>
         <source src="{`${base}/assets/${url}`}" type="video/mp4">
         <track kind ="captions">
         Your browser does not support the video tag.
@@ -61,12 +63,12 @@
         display: block;
 		margin-left:auto;
 		margin-right:auto;
-        max-width:100%;
+        width: 100vw;
     }
     .video-container{
         display: block;
-		margin-left:auto;
-		margin-right:auto;
-        max-width:900px;
+        width: 100vw;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
 </style>

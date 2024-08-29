@@ -2,7 +2,7 @@
     import { onMount, setContext } from "svelte";
     import { range } from 'd3-array';
     import { format } from 'd3-format';
-    import data from '$data/table.json'
+    import data from '$data/table_200.json'
     import Scrolly from '$components/helpers/Scrolly.svelte'
     import copy from "$data/copy.json";
     import '$styles/variables.css';
@@ -17,30 +17,19 @@
 
     let hoveredPlayer;
 
-    function colorTransition(columnIndex, value, player){
-        if(value < 2 && columnIndex > 0){
-            return "transparent";
-        }
-        if(value > 0){
-            if(String(player['career_end']) === "active" && !player['in_mlb']){
+    function colorTransition(player){
+            if(String(player['career_end']) === "active"){
                 return "#A5CDE0";
             }
             if(Math.max(player['last_ten'],Math.max(player['middle_ten'],player['first_ten'])) === player['middle_ten']){
                 return "#eec518";
             }
-        }
-        if(value > 1){
             if(Math.max(player['last_ten'],Math.max(player['middle_ten'],player['first_ten'])) === player['first_ten']){
                 return "#a1850c";
             }
             if(Math.max(player['last_ten'],Math.max(player['middle_ten'],player['first_ten'])) === player['last_ten']){
                 return "#EFE3A8";
             }
-        }
-        if(columnIndex===0){
-            return "#ddd";
-        }
-        return "transparent";
     }
 
     function hoverEntry(player,rank){
@@ -52,20 +41,7 @@
         }
     }
 
-    function handleStroke(player,value){
-        if(value === 4 && ['Tyler Rogers','David Robertson','Raisel Iglesias'].includes(player['Name'])){
-            return "3px solid #cf6b6b";
-        }
-        return "none";
-    }
-
-    // onMount(()=>{
-    //     oldRows=grid.querySelectorAll("[data-label='2000s']")
-    //     newRows=grid.querySelectorAll("[data-label='current']")
-    // })
-
     $: gridData = data.sort((a,b) => (a['SD%'] > b['SD%']) ? -1 : 1);
-    // $: gridData100 = data_hundred.sort((a,b) => (a['SD%'] > b['SD%']) ? -1 : 1);
 
     // $: value, colorTransition();
     // $: value, showRows();
@@ -77,9 +53,9 @@
         <div class = "grid-row-container">
             <div class="grid-header">
                 <div class="hed">Top 50 relievers in SD% from 1994-2024</div>
-                <div class="subhed">Among pitchers with a minimum of 300 innings pitched</div>
-                <div style="margin-bottom:5px; transition: opacity 0.25s; transition-delay: 0.10s; opacity: {value > 1 ? 1 : 0}">Most active period of play:</div>
-                <div class="chart-key" style="transition: opacity 0.25s; transition-delay: 0.10s; opacity: {value > 1 ? 1 : 0}">
+                <div class="subhed">Among pitchers with a minimum of 200 innings pitched</div>
+                <div style="margin-bottom:5px; transition: opacity 0.25s; transition-delay: 0.10s;">Most active period of play:</div>
+                <div class="chart-key" style="transition: opacity 0.25s; transition-delay: 0.10s;">
                     <div style="width: 50px; background-color: #a1850c"></div><div class="key-text">1994-2003</div>
                     <div style="width: 50px; background-color: #eec518"></div><div class="key-text">2004-2013</div>
                     <div style="width: 50px; background-color: #EFE3A8"></div><div class="key-text">2014-2023</div>
@@ -92,55 +68,34 @@
                 {#each {length: steps.length} as _, i}
                     <div class="grid-column">
                         {#each gridData.slice(i*10,(i+1)*10) as row, index}
-                            <div class = "grid-entry" on:mouseenter={hoverEntry(row,Number(i*10+index+1))} on:mouseleave={hoverEntry(false,false)} data-label={row["PlayerId"]} aria-label={row["Name"]} style="transition: background-color 0.25s; transition-delay: 0.10s; background-color:{colorTransition(i,value,row)}; border:{handleStroke(row,value)};">
-                                {#if i === 1 && (value < 2 || !value)}
-                                    {#if index === 0}
-                                        #1
-                                    {:else if index === 9}
-                                        #10
-                                    {/if}
-                                {/if}
+                            <div class = "grid-entry" on:mouseenter={hoverEntry(row,Number(i*10+index+1))} on:mouseleave={hoverEntry(false,false)} data-label={row["PlayerId"]} aria-label={row["Name"]} style="transition: background-color 0.25s; transition-delay: 0.10s; background-color:{colorTransition(row)};">
                             </div>
                         {/each}
                     </div>
                 {/each}
             </div>
-            {#if hoveredPlayer && value > 1}
                 <div class="tooltip">
-                    <div id="#rank">#{hoveredPlayer["rank"] ?? " "}</div>
-                    <div id="#profile">{`${hoveredPlayer["Name"]}, ${hoveredPlayer["career_start"]}-${hoveredPlayer["career_end"]}`}</div>
-                    <div id="#stats">{`${format('.3s')(hoveredPlayer['SD%'])}%`}</div>
+                    <div id="#rank">{hoveredPlayer ? `#${hoveredPlayer["rank"]}` : "Hover over a rectangle to learn about the player"}</div>
+                    {#if hoveredPlayer}<div id="#profile">{`${hoveredPlayer["Name"]}, ${hoveredPlayer["career_start"]}-${hoveredPlayer["career_end"]}`}</div>{/if}
+                    {#if hoveredPlayer}<div id="#stats">{`${format('.3s')(Number(hoveredPlayer['SD%'])*100)}%`}</div>{/if}
                 </div>
-            {/if}
         </div>
     </div>
-    <div class="scrolly-text-container">
-    <Scrolly bind:value>
-        {#each {length: steps.length} as step, i}
-			{@const active = value === i}
-			<div class="step" class:first-step={i === 0} class:active>
-				{@html steps[i]}
-			</div>
-		{/each}
-    </Scrolly> 
-    </div>  
 </div>
 
 <style>
     .grid-scrolly-container{
-        display:grid;
+        display:block;
         width: 90vw;
+        height: 70vh;
         margin-left: auto;
         margin-right: auto;
         margin-top: 5%;
-        grid-template-columns: auto 25%;
-        grid-gap: 10%
+        margin-bottom: 5%;
     }
 
     .grid-container{
-        position: sticky;
-        width: 100%;
-        max-height:600px;
+        width: 65%;
         margin-bottom:30px;
         top: calc((100vh - 600px)/2);
         margin-left:auto;

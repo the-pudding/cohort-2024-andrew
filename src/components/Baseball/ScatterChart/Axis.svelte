@@ -22,7 +22,7 @@ $:yTicks=yScale.ticks();
         <line x1={xScale(xTicks[0])-20} x2={chartWidth} y1={yScale(yTicks[yTicks.length-1])} y2={yScale(yTicks[yTicks.length-1])} stroke="#ddd"></line>
         {#each xTicks as tick, index}
             <line x1={xScale(tick)} x2={xScale(tick)} y1={yScale(yTicks[yTicks.length-1])} y2={yScale(yTicks[yTicks.length-1])-10} stroke="#ddd"></line>
-            <text x={xScale(tick)} y={chartHeight+15} text-anchor="middle">{tick!==0 ? tick : ""}</text>
+            <text x={xScale(tick)} y={chartHeight+10} text-anchor="middle">{tick!==0 ? tick : ""}</text>
         {/each}
     </g>
     <g class="y-axis" transform="translate({margin.left},{margin.top})">
@@ -34,14 +34,14 @@ $:yTicks=yScale.ticks();
             {/if}
         {/each}
     </g>
-    <!-- {#if step > 1}
-        <text
-            x={xScale(xTicks[1])}
-            y={yScale(yTicks[1])}
-        >
-            Pitchers with Career IP > {innings[step] ?? 100}
-        </text>
-    {/if} -->
+    <text
+        text-anchor="end"
+        x={xScale(xTicks[xTicks.length-1])}
+        y={yScale(5)}
+        font-size="18px"
+    >
+        MLB Relievers 1994-2024, min. 300 IP
+    </text>
 </g>
 
 <style>
